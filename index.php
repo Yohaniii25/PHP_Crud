@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     values('$name','$email','$mobile','$password')";
     $result = mysqli_query($con, $sql);
     if ($result) {
-        echo "data inserted";
+        header('location:display.php');
     } else {
         die(mysqli_error($con));
     }
@@ -34,26 +34,30 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="container my-5">
-        <form method="post">
+        <form method="post" autocomplete="off">
 
             <div class="mb-3">
                 <label>Name</label>
-                <input type="text" class="form-control" placeholder="Enter your name" name="name" autocomplete="off">
+                <input type="text" class="form-control" placeholder="Enter your name" 
+                name="name" autocomplete="off">
             </div>
 
             <div class="mb-3">
                 <label>Email</label>
-                <input type="email" class="form-control" placeholder="Enter your email" name="email" autocomplete="off">
+                <input type="email" class="form-control" placeholder="Enter your email" 
+                name="email" autocomplete="off">
             </div>
 
             <div class="mb-3">
                 <label>Mobile</label>
-                <input type="text" class="form-control" placeholder="Enter your mobile" name="mobile" autocomplete="off">
+                <input type="text" class="form-control" placeholder="Enter your mobile" 
+                name="mobile" autocomplete="off">
             </div>
 
             <div class="mb-3">
                 <label>Password</label>
-                <input type="password" class="form-control" placeholder="Enter your password" name="password" autocomplete="off">
+                <input type="password" class="form-control" placeholder="Enter your password" 
+                name="password" autocomplete="off">
             </div>
 
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
